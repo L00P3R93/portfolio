@@ -13,7 +13,7 @@ const getLatestRepos = async (data, token) => {
                 `https://api.github.com/search/repositories?q=user:${username}+sort:author-date-asc`,
                 {
                     headers: {
-                        Authorization: `token ${token}`,
+                        Authorization: `${token}`,
                     }
                 }
             )

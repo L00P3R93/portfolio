@@ -12,8 +12,8 @@
 	"start": "next start"
   },
   "engines": {
-    "node": "18.1.0",
-    "npm": "8.8.0"
+    "node": "16.17.0",
+    "npm": "8.15.0"
   },
   "dependencies": {
 	"axios": "^0.21.1",
