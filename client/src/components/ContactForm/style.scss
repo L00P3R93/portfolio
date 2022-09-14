@@ -1,0 +1,50 @@
+@use "../../assets/styles/colors/pantone-ponder-palette" as ponder;
+@use '../../assets/styles/colors/pantone-snorkel-palette' as snorkel;
+
+form {
+  label {
+	color: snorkel.$pirate-black;
+	font-weight: 700;
+  }
+
+  .form-control {
+	border-color: ponder.$monument;
+
+	&:active, &:focus, &:hover {
+	  border-color: snorkel.$classic-blue;
+	  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+	  0 0 8px rgba(15, 76, 129, 1);
+	}
+
+	&::placeholder {
+	  // PANTONE® Monument
+	  color: rgba(132, 137, 140, 0.5);
+	}
+  }
+
+  .btn-outline-submit {
+	border-color: snorkel.$classic-blue;
+	color: snorkel.$classic-blue;
+
+	&:active, &:focus, &:hover {
+	  background-color: snorkel.$classic-blue;
+	  color: white;
+	}
+  }
+
+  .btn-outline-reset {
+	border-color: snorkel.$coralessence;
+	color: snorkel.$coralessence;
+
+	&:active, &:focus, &:hover {
+	  background-color: snorkel.$coralessence;
+	  color: white;
+	}
+  }
+
+  #recaptcha-v2-msg {
+	color: snorkel.$pirate-black !important;
+	font-weight: 600;
+	text-align: center;
+  }
+}
