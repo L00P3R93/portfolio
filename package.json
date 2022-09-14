@@ -1,0 +1,54 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Full Stack Developer Portfolio.",
+  "main": "server.js",
+  "repository": "https://github.com/L00P3R93/portfolio.git",
+  "author": "sntaks",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "cross-fetch": "^3.0.6",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.10.9",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.4.13"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "nodemon": "^2.0.4"
+  },
+  "resolutions": {
+    "http-proxy": "1.18.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "standard"
+    ]
+  },
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions",
+    "install": "cd client && yarn install",
+    "seed": "node scripts/seed-proj.js",
+    "test": "npm run lint",
+    "lint": "eslint . && cd client && npm run lint",
+    "fix": "eslint --fix . && cd client && npm run fix",
+    "client": "cd client && npm run start",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "start:prod": "node server.js",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  },
+  "engines": {
+    "node": "14.13.1"
+  }
+}
