@@ -1,21 +1,8 @@
-/***********************************************************************
- FSWD:  Vincent Kioko
- Date:  05/14/2020
- File:  index.js
- Ver.:  1.0.0 20200826 - basic form
- 0.2.0 20200922 - reCAPTCHA v2
- 0.3.0 20200929 - form handling
- 0.4.0 20200930 - gatekeeping
- 0.5.0 20201002 - message sanitization
- 0.6.0 20201003 - reCAPTCHA v2 reset
- 0.7.0 20201006 - form validation
- 1.0.0 20201118 - PRODUCTION RELEASE
-
- This script contains the ContactForm React component of my developer portfolio.
- ***********************************************************************/
-import React, {useEffect, useState} from "react";
-import {Button, Form} from "react-bootstrap";
-import {EReCaptchaV2Size,EReCaptchaV2Theme,ReCaptchaV2} from "react-recaptcha-x";
+import React, { useEffect, useState } from 'react'
+import { Button, Form } from 'react-bootstrap'
+import {
+    EReCaptchaV2Size, EReCaptchaV2Theme, ReCaptchaV2
+} from 'react-recaptcha-x'
 import stripHtml from 'string-strip-html'
 import API from '../../utils/api'
 import './style.scss'
@@ -51,81 +38,94 @@ const ContactForm = () => {
     const [recaptchaV2Add, setRecaptchaV2Add] = useState(false)
 
     useEffect(() => {
-        if(typeof recaptchaV2Token === 'string'){
-            API.verifyVisitor(recaptchaV2Token).then(res => {
-                if(res === undefined){
-                    // ASSERT: API returned undefined, which means fetch failed,
-                    setRecaptchaV2Msg(statusMsg.connErr)
-                    setRecaptchaV2Add(true)
-                }else if(!res.success){
-                    // ASSERT: User appears to be non-human
-                    setRecaptchaV2Token(undefined)
-                    setRecaptchaV2Err(true)
-                    setRecaptchaV2Msg(statusMsg.bot)
-                    setRecaptchaV2Add(false)
-                }else{
-                    // ASSERT: User appears to be human.
-                    setRecaptchaV2Human(true)
-                    setRecaptchaV2Msg(statusMsg.human)
-                    setRecaptchaV2Add(false)
-                }
-            }).catch(err => console.error(err.stack))
+        if (typeof recaptchaV2Token === 'string') {
+            API.verifyVisitor(recaptchaV2Token)
+                .then(res => {
+                    if (res === undefined) {
+                        // ASSERT: API returned undefined, which means fetch failed.
+                        setRecaptchaV2Msg(statusMsg.connErr)
+                        setRecaptchaV2Add(true)
+                    } else if (!res.success) {
+                        // ASSERT: User appears to be non-human.
+                        setRecaptchaV2Token(undefined)
+                        setRecaptchaV2Err(true)
+                        setRecaptchaV2Msg(statusMsg.bot)
+                        setRecaptchaV2Add(false)
+                    } else {
+                        // ASSERT: User appears to be human.
+                        setRecaptchaV2Human(true)
+                        setRecaptchaV2Msg(statusMsg.human)
+                        setRecaptchaV2Add(false)
+                    }
+                })
+                .catch(err => console.error(err.stack))
         }
     }, [recaptchaV2Token])
 
     const handleFormInputChg = ev => {
-        const {name, value} = ev.target
-        setFormData({...formData, [name]: value})
+        const { name, value } = ev.target
+
+        setFormData({
+            ...formData,
+            [name]: value
+        })
     }
 
     const handleFormSubmit = ev => {
         ev.preventDefault()
-        if(typeof recaptchaV2Token !== 'string'){
+
+        if (typeof recaptchaV2Token !== 'string') {
             setRecaptchaV2Msg(statusMsg.tokenNeeded)
             setRecaptchaV2Add(false)
             return
         }
+
         const form = ev.currentTarget
 
-        if(form.checkValidity() === false){
+        if (form.checkValidity() === false) {
             ev.stopPropagation()
             setRecaptchaV2Msg(statusMsg.formErr)
             setRecaptchaV2Add(false)
-        }else{
-            // ASSERT: Form input is valid
+        } else {
+            // ASSERT: Form input is valid.
             handleSendMsg()
         }
+
         setFormValidated(true)
     }
 
     const handleSendMsg = () => {
-        if(recaptchaV2Human && !recaptchaV2Exp && !recaptchaV2Err){
-            // Strip any HTML tags from visitor's message
-            formData.message = stripHtml(formData.message, {
-                stripTogetherWithTheirContents: ['script']
-            }).result
+        if (recaptchaV2Human && !recaptchaV2Exp && !recaptchaV2Err) {
+            // Strip any HTML tags from visitor's message.
+            formData.message =
+                stripHtml(formData.message, {
+                    stripTogetherWithTheirContents: ['script']
+                }).result
 
-            // Persist visitor's message in the database
-            API.saveVisitorMsg(formData).catch(err => console.log(err.stack))
+            // Persist visitor's message in the database.
+            API.saveVisitorMsg(formData)
+                .catch(err => console.log(err.stack))
 
             // Send visitor's message to API for routing.
-            API.sendVisitorMsg(formData).then(({ status }) => {
-                if (typeof status === 'boolean' && status) {
-                    // Clear form input.
-                    setFormData(initFormData)
+            API.sendVisitorMsg(formData)
+                .then(({ status }) => {
+                    if (typeof status === 'boolean' && status) {
+                        // Clear form input.
+                        setFormData(initFormData)
 
-                    // Reset reCAPTCHA v2 widget and state.
-                    setFormValidated(false)
-                    setRecaptchaV2Show(false)
-                    setRecaptchaV2Human(false)
-                    setRecaptchaV2Msg(statusMsg.contactMade)
-                    setRecaptchaV2Add(false)
-                    setRecaptchaV2Show(true)
-                } else {
-                    setRecaptchaV2Msg(statusMsg.genErr)
-                    setRecaptchaV2Add(true)
-                }
-            }).catch(err => console.error(err.stack))
+                        // Reset reCAPTCHA v2 widget and state.
+                        setFormValidated(false)
+                        setRecaptchaV2Show(false)
+                        setRecaptchaV2Human(false)
+                        setRecaptchaV2Msg(statusMsg.contactMade)
+                        setRecaptchaV2Add(false)
+                        setRecaptchaV2Show(true)
+                    } else {
+                        setRecaptchaV2Msg(statusMsg.genErr)
+                        setRecaptchaV2Add(true)
+                    }
+                })
+                .catch(err => console.error(err.stack))
         }
     }
 
@@ -146,7 +146,10 @@ const ContactForm = () => {
     }
 
     return (
-        <Form noValidate validated={formValidated} onSubmit={handleFormSubmit}>
+        <Form noValidate
+              validated={formValidated}
+              onSubmit={handleFormSubmit}
+        >
             <Form.Group controlId="formContactMeName">
                 <Form.Label>Name</Form.Label>
                 <Form.Control

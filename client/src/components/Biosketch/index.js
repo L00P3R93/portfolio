@@ -1,12 +1,3 @@
-/***********************************************************************
- FSWD:  Vincent Kioko
- Date:  05/14/2022
- File:  index.js
- Ver.:  1.0.0 20220514
-
- This script contains the Biosketch React component of my developer
- portfolio.
- ***********************************************************************/
 import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import './style.scss'

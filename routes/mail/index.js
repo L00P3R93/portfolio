@@ -1,8 +1,9 @@
 const router = require('express').Router()
-const mailRoutes = require('../../controllers')
+const mailRoutes = require('./mail-api')
 
 module.exports = (() => {
-    router.route('/').post(controllers.queryManager.messages.create)
+    // form mail routes
+    router.use('/contact', mailRoutes)
 
     return router
 })()

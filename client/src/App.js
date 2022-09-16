@@ -12,7 +12,7 @@ require('dotenv').config()
 
 library.add(fab, faEnvelope, faFileWord)
 
-const RECAPTCHA_V2_SITE_KEY = process.env.REACT_APP_RECAPTCHA_V2_SITE_KEY
+const RECAPTCHA_V2_SITE_KEY = process.env.REACT_APP_RECAPTCHA_V2_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
 
 const App = () => {
     const [projects, setProjects] = useState([])

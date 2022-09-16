@@ -6,7 +6,7 @@ const SocialMedia = ({label, icon, link}) => {
     const getFAIcon = (faIcon) => {
         switch(faIcon){
             case 'github':
-            case 'linked-in':
+            case 'linkedin-in':
             case 'twitter':
                 return (
                     <FontAwesomeIcon
