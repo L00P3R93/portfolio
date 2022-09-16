@@ -1,0 +1,13 @@
+@use '../../assets/styles/colors/pantone-snorkel-palette' as snorkel;
+
+.social-media {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2rem 1rem;
+  text-transform: uppercase;
+
+  svg {
+	color: snorkel.$jasmine-green;
+	margin-right: 1.5rem;
+  }
+}

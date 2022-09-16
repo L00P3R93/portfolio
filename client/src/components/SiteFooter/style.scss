@@ -1,0 +1,39 @@
+@use '../../assets/styles/colors/pantone-snorkel-palette' as snorkel;
+
+footer.site {
+  background: snorkel.$pirate-black;
+
+  a {
+	color: inherit;
+
+	&:active, &:focus, &:hover {
+	  color: white;
+	  text-decoration: inherit;
+	}
+  }
+
+  .social-media {
+	display: inline-block;
+	font-size: 1rem;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+  }
+
+  svg {
+	margin-right: 0.5rem;
+  }
+
+}
+
+/*
+  NOTE: This media query represents the maximum viewport width of an
+        iPhone 11 Pro Max, which should scale nicely on most mobile phones.
+*/
+@media (max-width: 991px) {
+  footer.site {
+	.social-media {
+	  font-size: 1.5rem;
+	  margin: 2rem 1rem;
+	}
+  }
+}

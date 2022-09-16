@@ -1,0 +1,53 @@
+@use '../../assets/styles/colors/pantone-snorkel-palette' as snorkel;
+@use '../../assets/styles/mixins/hover-sliders' as flair;
+
+nav {
+  ul {
+	font-size: 1.5rem;
+	font-weight: 500;
+	list-style-type: none;
+	margin-bottom: 2rem;
+	overflow: hidden;
+	padding: 0;
+
+	li {
+	  display: inline-block;
+
+	  a {
+		@include flair.hover-sliders(snorkel.$coralessence);
+
+		color: inherit;
+		display: inherit;
+		margin-left: 0.5em;
+		margin-right: 0.5em;
+		position: relative;
+		text-align: center;
+		text-decoration: none;
+
+		&:active, &:focus, &:hover {
+		  color: white;
+		  text-decoration: inherit;
+		}
+	  }
+	}
+  }
+}
+
+/*
+  NOTE: This media query represents the maximum viewport width of an
+        iPhone 11 Pro Max, which should scale nicely on most mobile phones.
+*/
+@media (max-width: 414px) {
+  nav {
+	ul {
+	  font-size: 1.4rem;
+
+	  li {
+		a {
+		  margin-left: 0.25em;
+		  margin-right: 0.25em;
+		}
+	  }
+	}
+  }
+}

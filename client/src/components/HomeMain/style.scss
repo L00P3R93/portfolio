@@ -1,0 +1,56 @@
+@use '../../assets/styles/colors/pantone-snorkel-palette' as snorkel;
+@use '../../assets/styles/colors/portfolio-colors' as colors;
+@use '../../assets/styles/mixins/razor-edge-container' as container;
+
+main {
+  #projects-container {
+	margin-bottom: 15rem;
+
+	#porfolio-button {
+	  margin-top: 5rem;
+
+	  .btn-outline-portfolio {
+		background-color: colors.$slightly-gray;
+		border-color: snorkel.$pirate-black;
+		color: snorkel.$pirate-black;
+
+		&:active, &:focus, &:hover {
+		  background-color: snorkel.$pirate-black;
+		  color: white;
+		}
+	  }
+	}
+  }
+
+  #contact-form-container {
+	/*
+	  NOTE: I may convert the Footer component into a razor-edge
+			container at some point; thus, I'm leaving the following config intact. It's currently invisible. (09/10/2020)
+	*/
+	@include container.razor-edge(
+					snorkel.$cashmere-blue, 2rem, 3rem, bottom left, -7deg, top);
+	@include container.razor-edge(
+					snorkel.$cashmere-blue, 2rem, 3rem, top right, -7deg);
+
+	margin-bottom: 0;
+
+	h1 {
+	  &:after {
+		border-top: 2px solid rgba(209, 220, 234, 0.5);
+		border-bottom: 2px solid rgba(209, 220, 234, 0.5);
+	  }
+	}
+  }
+}
+
+/*
+  NOTE: This media query represents the maximum viewport width of an
+        iPhone 11 Pro Max, which should scale nicely on most mobile phones.
+*/
+@media (max-width: 414px) {
+  main {
+	#projects-container {
+	  margin-bottom: 7rem;
+	}
+  }
+}

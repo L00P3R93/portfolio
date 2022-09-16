@@ -1,8 +1,8 @@
 /***********************************************************************
- FSWD:  Christopher B. Zenner
- Date:  09/10/2020
+ FSWD:  Vincent Kioko
+ Date:  05/14/2020
  File:  index.js
- Ver.:  0.1.0 20200826 - basic form
+ Ver.:  1.0.0 20200826 - basic form
  0.2.0 20200922 - reCAPTCHA v2
  0.3.0 20200929 - form handling
  0.4.0 20200930 - gatekeeping

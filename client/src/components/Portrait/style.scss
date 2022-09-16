@@ -1,0 +1,10 @@
+@use '../../assets/styles/colors/freepik-classic-blues-palette' as blues;
+
+#portrait {
+  img {
+	border: 10px solid blues.$darkest-classic-blue;
+	border-radius: 100%;
+	max-width: 360px;
+	width: 100%;
+  }
+}

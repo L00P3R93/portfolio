@@ -1,0 +1,120 @@
+@use '../../assets/styles/colors/pantone-ponder-palette' as ponder;
+@use '../../assets/styles/colors/portfolio-colors' as colors;
+
+div {
+  --background-image: url(
+  '../../assets/images/0.5x/laptop-grayscale-0.5x.png');
+  --project-sprite: url(
+  '../../assets/images/sprites/laptop-sprite.png');
+
+  a {
+	color: ponder.$classic-blue;
+
+	&:active, &:focus, &:hover {
+	  color: colors.$almost-black;
+	  text-decoration: none;
+	}
+
+	figure {
+	  background-image: var(--background-image);
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  font-size: 1.2rem;
+	  font-weight: 600;
+	  height: 375px;
+	  max-height: 375px;
+	  max-width: 500px;
+	  position: relative;
+	  width: 500px;
+
+	  &.photo-box {
+		background-image: var(--project-sprite);
+		background-position: -5px -5px;
+
+		&::after {
+		  background-image: var(--project-sprite);
+		  background-position: -515px -5px;
+		  background-repeat: no-repeat;
+		  content: '';
+		  opacity: 0;
+		  position: absolute;
+		  top: 0; right: 0; bottom: 0; left: 0;
+		  -webkit-transition: opacity 1.0s;
+		  -moz-transition: opacity 1.0s;
+		  -o-transition: opacity 1.0s;
+		  transition: opacity 1.0s;
+		}
+
+		&:hover {
+		  &::after {
+			opacity: 1;
+		  }
+		}
+	  }
+
+	  figcaption {
+		position: absolute;
+		right: 0; bottom: 0; left: 0;
+		z-index: 1;
+	  }
+	}
+
+	/*
+	  Thanks to Nicolás Engler for this tip on ["Bulletproofing CSS
+	  Custom Properties"](https://www.toptal.com/front-end/dynamic-css-with-custom-properties).
+	*/
+	@supports (not(--value: 0)) {
+	  /* CSS variables not supported */
+	  figure {
+		background-image: url(
+		'../../assets/images/0.5x/laptop-grayscale-0.5x.png');
+
+		&.photo-box {
+		  background-image: url(
+		  '../../assets/images/sprites/laptop-sprite.png');
+		}
+	  }
+	}
+  }
+
+  .lang, .tech {
+	font-size: 1rem;
+  }
+
+  .repo {
+	font-size: 0.9rem;
+	padding-top: 1rem;
+
+	a {
+	  svg {
+		font-size: 1rem;
+		margin-right: 3px;
+	  }
+	}
+  }
+}
+
+/*
+  NOTE: This media query represents the maximum viewport width of an
+        iPhone 11 Pro Max, which should scale nicely on most mobile phones.
+*/
+@media (max-width: 414px) {
+  div {
+	a {
+	  figure {
+		background-size: calc(1020px * 0.725);
+		height: calc(375px * 0.725);
+		width: calc(500px * 0.725);
+
+		&.photo-box {
+		  background-position: calc(-5px * 0.725) calc(-5px * 0.725);
+
+		  &::after {
+			background-position: calc(-515px * 0.725) calc(-5px * 0.725);
+			background-size: calc(1020px * 0.725);
+		  }
+		}
+	  }
+	}
+  }
+}

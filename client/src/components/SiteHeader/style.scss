@@ -1,0 +1,12 @@
+@use '../../assets/styles/colors/pantone-snorkel-palette' as snorkel;
+
+header.site {
+  background: snorkel.$classic-blue;
+  margin-bottom: 3rem;
+
+  nav {
+	ul {
+	  margin: 1rem auto;
+	}
+  }
+}

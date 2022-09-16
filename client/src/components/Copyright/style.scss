@@ -1,0 +1,9 @@
+@use '../../assets/styles/colors/portfolio-colors' as colors;
+
+#copyright {
+  background-color: colors.$almost-black;
+  font-weight: 600;
+  height: 10vh;
+  padding-top: 3vh;
+  width: 100%;
+}

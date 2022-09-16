@@ -1,0 +1,20 @@
+@use '../../assets/styles/colors/pantone-snorkel-palette' as snorkel;
+@use '../../assets/styles/mixins/razor-edge-container' as container;
+
+footer {
+  font-weight: 600;
+
+  #about-me-container {
+	@include container.razor-edge(
+					snorkel.$pirate-black, 2rem, 3rem, bottom left, -7deg, top);
+
+	a {
+	  color: inherit;
+
+	  &:active, &:focus, &:hover {
+		color: white;
+		text-decoration: inherit;
+	  }
+	}
+  }
+}

@@ -1,0 +1,21 @@
+@use '../../assets/styles/colors/pantone-snorkel-palette' as snorkel;
+@use '../../assets/styles/mixins/razor-edge-container' as container;
+
+header {
+  margin-bottom: 15rem;
+
+  #intro-container {
+	@include container.razor-edge(
+					snorkel.$classic-blue, 2rem, 3rem, top right, -7deg);
+  }
+}
+
+/*
+  NOTE: This media query represents the maximum viewport width of an
+        iPhone 11 Pro Max, which should scale nicely on most mobile phones.
+*/
+@media (max-width: 414px) {
+  header {
+	margin-bottom: 7rem;
+  }
+}
