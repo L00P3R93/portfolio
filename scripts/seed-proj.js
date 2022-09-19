@@ -64,7 +64,7 @@ const projects = [
         technologiesUsed: ['API', 'Python'],
         completionDate: new Date(2022, 5, 31),
         projectType: 'individual',
-        starred: true,
+        starred: false,
         active: true
     },
     {
@@ -76,7 +76,7 @@ const projects = [
         technologiesUsed: ['Express', 'MongoDB', 'Node', 'jQuery', 'Material UI'],
         completionDate: new Date(2022, 3, 15),
         projectType: 'individual',
-        starred: true,
+        starred: false,
         active: true
     },
     {
@@ -88,7 +88,7 @@ const projects = [
         technologiesUsed: ['MongoDB', 'Express', 'Handlebars', 'Node', 'Material UI'],
         completionDate: new Date(2022, 3, 11),
         projectType: 'individual',
-        starred: true,
+        starred: false,
         active: true
     },
     {
@@ -112,7 +112,7 @@ const projects = [
         technologiesUsed: ['API', 'MySQL', 'JWT', 'jQuery', 'Bootstrap'],
         completionDate: new Date(2021, 1, 19),
         projectType: 'individual',
-        starred: true,
+        starred: false,
         active: true
     },
     {
@@ -124,7 +124,7 @@ const projects = [
         technologiesUsed: ['API', 'Webpack', 'jQuery'],
         completionDate: new Date(2022, 1, 21),
         projectType: 'group',
-        starred: true,
+        starred: false,
         active: true
     },
     {
@@ -136,7 +136,7 @@ const projects = [
         technologiesUsed: ['Gradle', 'Android Studio'],
         completionDate: new Date(2021, 7, 17),
         projectType: 'group',
-        starred: true,
+        starred: false,
         active: true
     },
     {
@@ -148,7 +148,7 @@ const projects = [
         technologiesUsed: ['Gradle', 'Android Studio'],
         completionDate: new Date(2021, 7, 17),
         projectType: 'group',
-        starred: true,
+        starred: false,
         active: true
     }
 ]
