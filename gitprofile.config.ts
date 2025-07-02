@@ -50,9 +50,10 @@ const CONFIG = {
 		},
 	},
 	seo: {
-		title: 'Portfolio of Vincent Kioko',
-		description: '',
-		imageURL: '',
+		  title: 'Vincent Kioko | Full Stack Developer & Fintech Systems Engineer',
+		  description:
+		    'Portfolio of Vincent Kioko, a full stack developer building fintech, POS, and logistics systems in Kenya. Explore Laravel, React, and Node.js projects for microfinance, retail, and mobile money integration.',
+		  imageURL: 'https://sntaks.com/images/seo-banner.png', // Optional image for social previews
 	},
 	social: {
 		linkedin: 'vkioko04',
@@ -132,25 +133,35 @@ const CONFIG = {
 		},
 	],
 	publications: [
-		{
-			title: 'Publication Title',
-			conferenceName: '',
-			journalName: 'Journal Name',
-			authors: 'John Doe, Jane Smith',
-			link: 'https://example.com',
-			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-		},
-		{
-			title: 'Publication Title',
-			conferenceName: 'Conference Name',
-			journalName: '',
-			authors: 'John Doe, Jane Smith',
-			link: 'https://example.com',
-			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-		},
+		  {
+			    title: 'Design and Implementation of a Digital Wallet API for Mobile Money Integration',
+			    conferenceName: '',
+			    journalName: 'Journal of Financial Systems & Technology',
+			    authors: 'Vincent Kioko',
+			    link: 'https://example.com/publication/wallet-api-integration',
+			    description:
+			      'This paper explores the architectural design, security considerations, and Laravel implementation of a digital wallet API integrated with M-Pesa for real-time deposits and withdrawals in microfinance settings.',
+		  },
+		  {
+			    title: 'Modern POS Systems for Informal Retailers: A Laravel & React-Based Case Study',
+			    conferenceName: 'East Africa ICT Summit 2024',
+			    journalName: '',
+			    authors: 'Vincent Kioko, John Mwangi',
+			    link: 'https://example.com/publication/pos-nexus-study',
+			    description:
+			      'A technical paper detailing the design, development, and deployment of a hybrid POS and inventory system tailored for informal retail SMEs in Kenya using Laravel and React.js.',
+		  },
+		  {
+			    title: 'Workflow Automation in Lending Systems: Optimizing Loan Lifecycle Management',
+			    conferenceName: '',
+			    journalName: 'International Journal of Software Engineering Practices',
+			    authors: 'Vincent Kioko',
+			    link: 'https://example.com/publication/lending-crm-workflow',
+			    description:
+			      'This publication presents practical approaches for digitizing loan processing using a custom-built CRM system, focusing on loan application workflows, cycle enforcement, reminders, and M-Pesa API integration.',
+			  },
 	],
+
 	// Display articles from your medium or dev account. (Optional)
 	blog: {
 		source: 'dev', // medium | dev
