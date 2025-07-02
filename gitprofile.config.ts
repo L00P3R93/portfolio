@@ -38,31 +38,31 @@ const CONFIG = {
 				    {
 					      title: 'Wallet Nexus',
 					      description: 'A Laravel-based digital wallet system with KYC, internal transfers, M-Pesa integration, and audit trails. Designed for SACCOs and microfinance institutions.',
-					      imageUrl: 'https://sntaks.com/assets/wallet-nexus-thumbnail.png', // Replace with your image
+					      imageUrl: 'https://inv.psctraining.co.ke/assets/img/img-01.png', // Replace with your image
 					      link: 'https://documenter.getpostman.com/view/39198265/2sAYQZHXkZ', // Add live demo or documentation link if available
 				    },
 				    {
 					      title: 'POS Nexus',
 					      description: 'Point of Sale and inventory management system tailored for wholesalers and retailers. Supports barcode scanning, purchase tracking, and user-level permissions.',
-					      imageUrl: 'https://sntaks.com/assets/pos-nexus-thumbnail.png',
+					      imageUrl: 'https://pos.psctraining.co.ke/assets/img/logo/cashier-machine.png',
 					      link: 'https://pos.psctraining.co.ke',
 				    },
 				    {
 					      title: 'Madam Portal',
 					      description: 'A custom CRM and task tracking portal for a boutique business, enabling seamless staff management, customer relations, and sales logging.',
-					      imageUrl: 'https://sntaks.com/assets/madam-portal-thumbnail.png',
+					      imageUrl: 'https://inv.psctraining.co.ke/assets/img/img-01.png',
 					      link: 'https://madam.sterlingcredit.co.ke',
 				    },
 				    {
 					      title: 'Sterling Main',
 					      description: 'Enterprise loan management platform with modules for customer onboarding, loan cycles, collections, and document handling, developed for Sterling Credit Ltd.',
-					      imageUrl: 'https://sntaks.com/assets/sterling-main-thumbnail.png',
+					      imageUrl: 'https://portal.sterlingcredit.co.ke/images/logo.png',
 					      link: 'https://sterlingcredit.co.ke',
 				    },
 				    {
 					      title: 'Inventory Nexus',
 					      description: 'Modular inventory and supplier management system with stock alerts, reorder level automation, and purchase records—ideal for SMEs and distributors.',
-					      imageUrl: 'https://sntaks.com/assets/inventory-nexus-thumbnail.png',
+					      imageUrl: 'https://inv.psctraining.co.ke/assets/img/img-01.png',
 					      link: 'https://inv.psctraining.co.ke/',
 				    },
 			  ],
@@ -94,7 +94,7 @@ const CONFIG = {
 		email: 'vincentkioko51@gmail.com',
 	},
 	resume: {
-		fileUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', // Empty fileUrl will hide the `Download Resume` button.
+		fileUrl: 'https://drive.google.com/file/d/1DQjETuGPRfzGMY8n0yjkJDHkeQwSLbb1/view?usp=sharing', // Empty fileUrl will hide the `Download Resume` button.
 	},
 	skills: [
 		'PHP',
@@ -158,14 +158,6 @@ const CONFIG = {
 			    authors: 'Vincent Kioko',
 			    link: 'https://example.com/publication/wallet-api-integration',
 			    description: 'This paper explores the architectural design, security considerations, and Laravel implementation of a digital wallet API integrated with M-Pesa for real-time deposits and withdrawals in microfinance settings.',
-		  },
-		  {
-			    title: 'Modern POS Systems for Informal Retailers: A Laravel & React-Based Case Study',
-			    conferenceName: 'East Africa ICT Summit 2024',
-			    journalName: '',
-			    authors: 'Vincent Kioko, John Mwangi',
-			    link: 'https://example.com/publication/pos-nexus-study',
-			    description: 'A technical paper detailing the design, development, and deployment of a hybrid POS and inventory system tailored for informal retail SMEs in Kenya using Laravel and React.js.',
 		  },
 		  {
 			    title: 'Workflow Automation in Lending Systems: Optimizing Loan Lifecycle Management',
