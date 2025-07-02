@@ -81,7 +81,7 @@ const CONFIG = {
 		'PHP',
 		'Laravel',
 		'JavaScript',
-		'TypeScript,
+		'TypeScript',
 		'React.js',
 		'Node.js',
 		'Nest.js',
