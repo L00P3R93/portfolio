@@ -29,30 +29,49 @@ const CONFIG = {
 					'L00P3R93/v2.lend.nexus',
 					'L00P3R93/daraja-mpesa',
 					'L00P3R93/rick-n-morty-api',
-					'L00P3R93/wallet.nexus',
-					'L00P3R93/pos.nexus',
-					'L00P3R93/madam.portal',
-					'L00P3R93/sterling.main',
-					'L00P3R93/inv.nexus',
 				], // List of repository names to display.
 			},
 		},
 		external: {
-			header: 'Private Projects',
-		  	projects: [
-				{
-					title: 'Credit Lending & CRM System',
-			      		description: 'Lending solution with CRM features, loan tracking, and mobile money integration.',
-			      		imageUrl: '/images/crm.png', // Or a link
-			      		link: 'https://sntaks.com', // Or keep it blank
-			    	},
-		  	],
+			  header: 'Client-Facing Projects',
+			  projects: [
+				    {
+					      title: 'Wallet Nexus',
+					      description: 'A Laravel-based digital wallet system with KYC, internal transfers, M-Pesa integration, and audit trails. Designed for SACCOs and microfinance institutions.',
+					      imageUrl: 'https://sntaks.com/assets/wallet-nexus-thumbnail.png', // Replace with your image
+					      link: 'https://documenter.getpostman.com/view/39198265/2sAYQZHXkZ', // Add live demo or documentation link if available
+				    },
+				    {
+					      title: 'POS Nexus',
+					      description: 'Point of Sale and inventory management system tailored for wholesalers and retailers. Supports barcode scanning, purchase tracking, and user-level permissions.',
+					      imageUrl: 'https://sntaks.com/assets/pos-nexus-thumbnail.png',
+					      link: 'https://pos.psctraining.co.ke',
+				    },
+				    {
+					      title: 'Madam Portal',
+					      description: 'A custom CRM and task tracking portal for a boutique business, enabling seamless staff management, customer relations, and sales logging.',
+					      imageUrl: 'https://sntaks.com/assets/madam-portal-thumbnail.png',
+					      link: 'https://madam.sterlingcredit.co.ke',
+				    },
+				    {
+					      title: 'Sterling Main',
+					      description: 'Enterprise loan management platform with modules for customer onboarding, loan cycles, collections, and document handling, developed for Sterling Credit Ltd.',
+					      imageUrl: 'https://sntaks.com/assets/sterling-main-thumbnail.png',
+					      link: 'https://sterlingcredit.co.ke',
+				    },
+				    {
+					      title: 'Inventory Nexus',
+					      description: 'Modular inventory and supplier management system with stock alerts, reorder level automation, and purchase records—ideal for SMEs and distributors.',
+					      imageUrl: 'https://sntaks.com/assets/inventory-nexus-thumbnail.png',
+					      link: 'https://inv.psctraining.co.ke/',
+				    },
+			  ],
 		},
+
 	},
 	seo: {
 		  title: 'Vincent Kioko | Full Stack Developer & Fintech Systems Engineer',
-		  description:
-		    'Portfolio of Vincent Kioko, a full stack developer building fintech, POS, and logistics systems in Kenya. Explore Laravel, React, and Node.js projects for microfinance, retail, and mobile money integration.',
+		  description: 'Portfolio of Vincent Kioko, a full stack developer building fintech, POS, and logistics systems in Kenya. Explore Laravel, React, and Node.js projects for microfinance, retail, and mobile money integration.',
 		  imageURL: 'https://sntaks.com/images/seo-banner.png', // Optional image for social previews
 	},
 	social: {
@@ -75,8 +94,7 @@ const CONFIG = {
 		email: 'vincentkioko51@gmail.com',
 	},
 	resume: {
-		fileUrl:
-			'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', // Empty fileUrl will hide the `Download Resume` button.
+		fileUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', // Empty fileUrl will hide the `Download Resume` button.
 	},
 	skills: [
 		'PHP',
@@ -139,8 +157,7 @@ const CONFIG = {
 			    journalName: 'Journal of Financial Systems & Technology',
 			    authors: 'Vincent Kioko',
 			    link: 'https://example.com/publication/wallet-api-integration',
-			    description:
-			      'This paper explores the architectural design, security considerations, and Laravel implementation of a digital wallet API integrated with M-Pesa for real-time deposits and withdrawals in microfinance settings.',
+			    description: 'This paper explores the architectural design, security considerations, and Laravel implementation of a digital wallet API integrated with M-Pesa for real-time deposits and withdrawals in microfinance settings.',
 		  },
 		  {
 			    title: 'Modern POS Systems for Informal Retailers: A Laravel & React-Based Case Study',
@@ -148,8 +165,7 @@ const CONFIG = {
 			    journalName: '',
 			    authors: 'Vincent Kioko, John Mwangi',
 			    link: 'https://example.com/publication/pos-nexus-study',
-			    description:
-			      'A technical paper detailing the design, development, and deployment of a hybrid POS and inventory system tailored for informal retail SMEs in Kenya using Laravel and React.js.',
+			    description: 'A technical paper detailing the design, development, and deployment of a hybrid POS and inventory system tailored for informal retail SMEs in Kenya using Laravel and React.js.',
 		  },
 		  {
 			    title: 'Workflow Automation in Lending Systems: Optimizing Loan Lifecycle Management',
@@ -157,9 +173,8 @@ const CONFIG = {
 			    journalName: 'International Journal of Software Engineering Practices',
 			    authors: 'Vincent Kioko',
 			    link: 'https://example.com/publication/lending-crm-workflow',
-			    description:
-			      'This publication presents practical approaches for digitizing loan processing using a custom-built CRM system, focusing on loan application workflows, cycle enforcement, reminders, and M-Pesa API integration.',
-			  },
+			    description: 'This publication presents practical approaches for digitizing loan processing using a custom-built CRM system, focusing on loan application workflows, cycle enforcement, reminders, and M-Pesa API integration.',
+		  },
 	],
 
 	// Display articles from your medium or dev account. (Optional)
