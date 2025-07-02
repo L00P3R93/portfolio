@@ -13,10 +13,10 @@ const CONFIG = {
 	projects: {
 		github: {
 			display: true, // Display GitHub projects?
-			header: 'Github Projects',
-			mode: 'automatic', // Mode can be: 'automatic' or 'manual'
+			header: 'Featured Projects',
+			mode: 'manual', // Mode can be: 'automatic' or 'manual'
 			automatic: {
-				sortBy: 'stars', // Sort projects by 'stars' or 'updated'
+				sortBy: 'updated', // Sort projects by 'stars' or 'updated'
 				limit: 8, // How many projects to display.
 				exclude: {
 					forks: false, // Forked projects will not be displayed if set to true.
@@ -25,30 +25,28 @@ const CONFIG = {
 			},
 			manual: {
 				// Properties for manually specifying projects
-				projects: ['arifszn/gitprofile', 'arifszn/pandora'], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
+				projects: [
+					'L00P3R93/v2.lend.nexus',
+					'L00P3R93/daraja-mpesa',
+					'L00P3R93/rick-n-morty-api',
+					'L00P3R93/wallet.nexus',
+					'L00P3R93/pos.nexus',
+					'L00P3R93/madam.portal',
+					'L00P3R93/sterling.main',
+					'L00P3R93/inv.nexus',
+				], // List of repository names to display.
 			},
 		},
 		external: {
-			header: 'My Projects',
-			// To hide the `External Projects` section, keep it empty.
-			projects: [
+			header: 'Private Projects',
+		  	projects: [
 				{
-					title: 'Project Name',
-					description:
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
-					imageUrl:
-						'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-					link: 'https://example.com',
-				},
-				{
-					title: 'Project Name',
-					description:
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
-					imageUrl:
-						'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-					link: 'https://example.com',
-				},
-			],
+					title: 'Credit Lending & CRM System',
+			      		description: 'Lending solution with CRM features, loan tracking, and mobile money integration.',
+			      		imageUrl: '/images/crm.png', // Or a link
+			      		link: 'https://sntaks.com', // Or keep it blank
+			    	},
+		  	],
 		},
 	},
 	seo: {
@@ -83,6 +81,7 @@ const CONFIG = {
 		'PHP',
 		'Laravel',
 		'JavaScript',
+		'TypeScript
 		'React.js',
 		'Node.js',
 		'Nest.js',
@@ -92,7 +91,6 @@ const CONFIG = {
 		'Docker',
 		'PHPUnit',
 		'CSS',
-		'Antd',
 		'Tailwind',
 	],
 	experiences: [
@@ -104,7 +102,7 @@ const CONFIG = {
 			companyLink: 'https://sterlingcredit.co.ke',
 		},
 		{
-			company: 'La Reina Collections',
+			company: 'Queens Classy Collections',
 			position: 'Junior Developer',
 			from: 'Sept 2019',
 			to: 'March 2020',
@@ -113,10 +111,10 @@ const CONFIG = {
 	],
 	certifications: [
 		{
-			name: 'Lorem ipsum',
-			body: 'Lorem ipsum dolor sit amet',
-			year: 'March 2022',
-			link: 'https://example.com',
+			name: 'Responsive Web Design',
+			body: 'freeCodeCamp',
+			year: 'Feb 2023',
+			link: 'https://www.freecodecamp.org/certification/sntaks/responsive-web-design',
 		},
 	],
 	educations: [
